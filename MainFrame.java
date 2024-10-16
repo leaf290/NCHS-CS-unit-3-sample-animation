@@ -11,7 +11,7 @@ public class MainFrame extends JFrame {
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        animationPanel = new AnimationPanel();
+        animationPanel = new AnimationPanel(400);
         add(animationPanel, BorderLayout.CENTER);
 
         JPanel controlPanel = new JPanel();
