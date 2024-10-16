@@ -17,7 +17,7 @@ public class Ball {
 
     public void move() {
         x += move; // Move 4 pixels to the right each frame
-        if(x > windowSize-30){
+        if(x >= windowSize-45){
             move *=-1;
             changeColor = true;
         } else if (x < 0){
@@ -35,6 +35,6 @@ public class Ball {
         // System.out.println(colour + "");
         Color colour = colors[num];
         g.setColor(colour);
-        g.fillOval(x, y, SIZE, SIZE);
+        g.fillRect(x, y, SIZE, SIZE);
     }
 }
