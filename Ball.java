@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Ball {
     private int x, y;
-    private final int SIZE = 30;
+    private int size = 30;
     private int move = 4;
     private int windowSize = 100;
     private boolean changeColor = false;
@@ -17,7 +17,7 @@ public class Ball {
 
     public void move() {
         x += move; // Move 4 pixels to the right each frame
-        if(x >= windowSize-45){
+        if(x >= windowSize-(size)){
             move *=-1;
             changeColor = true;
         } else if (x < 0){
@@ -29,12 +29,13 @@ public class Ball {
     public void draw(Graphics g) {
         if(changeColor){
             num = (int)(Math.random() * (colors.length-1));
+            size++;
             changeColor = false;
         }
         // Color colour = colors[(int)(Math.random() * (colors.length-1))];
         // System.out.println(colour + "");
         Color colour = colors[num];
         g.setColor(colour);
-        g.fillRect(x, y, SIZE, SIZE);
+        g.fillRect(x, y, size, size);
     }
 }
